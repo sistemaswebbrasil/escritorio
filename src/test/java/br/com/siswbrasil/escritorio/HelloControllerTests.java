@@ -1,11 +1,11 @@
 package br.com.siswbrasil.escritorio;
 
 
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +16,10 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import br.com.siswbrasil.escritorio.config.SecurityConfig;
 import br.com.siswbrasil.escritorio.config.controller.TokenController;
-import br.com.siswbrasil.escritorio.controller.HelloController;
 
 
 
-@WebMvcTest({ HelloController.class, TokenController.class })
+@WebMvcTest({ TokenController.class })
 @Import(SecurityConfig.class)
 public class HelloControllerTests {
 
@@ -37,7 +36,7 @@ public class HelloControllerTests {
 
 		String token = result.getResponse().getContentAsString();
 
-		this.mvc.perform(get("/")
+		this.mvc.perform(get("/api/profile")
 			.header("Authorization", "Bearer " + token))
 			.andExpect(content().string("Hello, user!"));
 		// @formatter:on
@@ -45,7 +44,7 @@ public class HelloControllerTests {
 
 	@Test
 	void rootWhenUnauthenticatedThen401() throws Exception {
-		this.mvc.perform(get("/"))
+		this.mvc.perform(get("/api/profile"))
 				.andExpect(status().isUnauthorized());
 
 	}
