@@ -13,6 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.JwtDecoders;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
@@ -36,17 +37,30 @@ public class SecurityConfig {
 
 	@Value("${jwt.private.key}")
 	RSAPrivateKey priv;
+	
+	private static final String[] AUTH_WHITELIST = {
+			"/",
+			"/admin",
+			"/admin/",
+			"/admin/**",
+			"/js/**",
+			"/css/**",
+			"/img/**",
+			"/fonts/**",
+			"/favicon.ico",
+	};
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		// @formatter:off
 		http
-				.authorizeHttpRequests((authorize) -> authorize
-						.anyRequest().authenticated()
-				)
+				.authorizeHttpRequests((authorize) -> {
+					authorize.requestMatchers(AUTH_WHITELIST).permitAll();
+					authorize.anyRequest().authenticated();
+				})
 				.csrf((csrf) -> csrf.ignoringRequestMatchers("/token"))
 				.httpBasic(Customizer.withDefaults())
-				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+				.oauth2ResourceServer(customizer ->  customizer.jwt(Customizer.withDefaults()))				
 				.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.exceptionHandling((exceptions) -> exceptions
 						.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
