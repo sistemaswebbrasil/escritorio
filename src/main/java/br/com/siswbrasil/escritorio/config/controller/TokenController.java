@@ -9,6 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,6 +36,11 @@ public class TokenController {
 				.build();
 		// @formatter:on
 		return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+	}
+	
+	@GetMapping("/api/profile")
+	public String hello(Authentication authentication) {
+		return "Hello, " + authentication.getName() + "!";
 	}
 
 }

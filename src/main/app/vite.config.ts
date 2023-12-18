@@ -7,6 +7,8 @@ import ViteFonts from 'unplugin-fonts/vite'
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
 
+const path = require('path');
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -35,6 +37,9 @@ export default defineConfig({
     },
     extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
   },
+  build: {
+    outDir: path.resolve(__dirname, '../resources/static')
+},  
   server: {
     port: 3000,
   },
