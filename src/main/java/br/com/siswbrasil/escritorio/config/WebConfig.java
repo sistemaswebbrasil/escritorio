@@ -14,8 +14,8 @@ public class WebConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/admin","/admin/","/admin/**").addResourceLocations("classpath:/static/").resourceChain(true)
-				.addResolver(new PathResourceResolver() {
+		registry.addResourceHandler("/admin", "/admin/", "/admin/**").addResourceLocations("classpath:/static/")
+				.resourceChain(true).addResolver(new PathResourceResolver() {
 					@Override
 					protected Resource getResource(String resourcePath, Resource location) throws IOException {
 						Resource requestedResource = location.createRelative(resourcePath);
