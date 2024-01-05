@@ -1,5 +1,6 @@
 import { RouteRecordRaw } from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
+import LoginPage from "@/pages/LoginPage.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -10,6 +11,10 @@ const routes: RouteRecordRaw[] = [
       { path: "about", component: () => import("@/pages/AboutPage.vue") },
       { path: "contact", component: () => import("@/pages/ContactPage.vue") },
     ],
+  },
+  {
+    path: "/login",
+    component: () => import("@/pages/LoginPage.vue"),
   },
 
   // Always leave this as last one,

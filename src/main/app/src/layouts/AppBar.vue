@@ -15,6 +15,8 @@
       <v-btn icon="mdi-help" to="/about"></v-btn>
 
       <v-btn icon="mdi-account-multiple" to="/contact"></v-btn>
+
+      <v-btn icon="mdi-key" to="/login"></v-btn>
     </template>
   </v-app-bar>
 </template>
