@@ -7,8 +7,8 @@ const isLoading = ref(false);
 const isSignInDisabled = ref(false);
 
 const refLoginForm = ref();
-const email = ref("vuetify3-visitor@gmail.com");
-const password = ref("sfm12345");
+const email = ref("a");
+const password = ref("a");
 const isFormValid = ref(true);
 
 // show password field
@@ -16,12 +16,19 @@ const showPassword = ref(false);
 
 const handleLogin = async () => {
   const { valid } = await refLoginForm.value.validate();
-  if (valid) {
+  // if (!valid) return;
+
+  try {
     isLoading.value = true;
     isSignInDisabled.value = true;
-    authStore.loginWithEmailAndPassword(email.value, password.value);
-  } else {
-    console.log("no");
+    await authStore.loginWithEmailAndPassword(email.value, password.value);
+  } catch {
+    console.log("Deu erro na api");
+    isFormValid.value = false;
+  } finally {
+    isLoading.value = false;
+    isSignInDisabled.value = false;
+    isFormValid.value = false;
   }
 };
 
@@ -63,6 +70,9 @@ const signInWithFacebook = () => {
     </v-card-title>
     <v-card-subtitle>Sign in to your account</v-card-subtitle>
     <!-- sign in form -->
+    <h1>isFormValid: {{ isFormValid }}</h1>
+    <h1>error: {{ error }}</h1>
+    <h1>errorMessages: {{ errorMessages }}</h1>
 
     <v-card-text>
       <v-form

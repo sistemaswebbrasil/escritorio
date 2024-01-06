@@ -36,14 +36,7 @@ export default defineConfig({
     extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
   },
   server: {
-    port: 4399,
-    proxy: {
-      "/sdApi": {
-        target: "http://me.yunrobot.cn:7860",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/sdApi/, ""),
-      },
-    },
+    port: 3000,
   },
   css: {
     preprocessorOptions: {
@@ -51,5 +44,4 @@ export default defineConfig({
       css: { charset: false },
     },
   },
-
 });

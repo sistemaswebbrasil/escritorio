@@ -1,3 +1,4 @@
+import { enMessages } from "@/locales/en";
 import { defineStore } from "pinia";
 
 type MessageType = "" | "info" | "success" | "error" | "warning";
@@ -7,6 +8,7 @@ export const useSnackbarStore = defineStore({
   state: () => ({
     isShow: false,
     message: "",
+    messages: [],
     type: "",
   }),
 
@@ -23,9 +25,10 @@ export const useSnackbarStore = defineStore({
       this.type = "";
     },
 
-    showErrorMessage(message) {
+    showErrorMessage(message, messages) {
       this.isShow = true;
       this.message = message;
+      this.messages = messages;
       this.type = "error";
     },
     showSuccessMessage(message) {

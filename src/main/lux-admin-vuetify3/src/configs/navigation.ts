@@ -7,6 +7,9 @@ import menuLanding from "./menus/landing.menu";
 import menuData from "./menus/data.menu";
 import menuAi from "./menus/ai.menu";
 
+/**
+ * Aqui que está todos os menus
+ */
 export default {
   menu: [
     {
@@ -14,10 +17,22 @@ export default {
       key: "",
       items: [
         {
+          key: "menu.home",
+          text: "Home",
+          link: "/",
+          icon: "mdi-home",
+        },
+        {
           key: "menu.dashboard",
           text: "Dashboard",
           link: "/dashboard",
           icon: "mdi-view-dashboard-outline",
+        },
+        {
+          icon: "mdi-login",
+          key: "menu.authLogin",
+          text: "Signin / Login",
+          link: "/auth/signin",
         },
       ],
     },
@@ -25,45 +40,45 @@ export default {
       text: "chatgpt",
       items: menuAi,
     },
-    {
-      text: "Apps",
-      items: menuApps,
-    },
+    // {
+    //   text: "Apps",
+    //   items: menuApps,
+    // },
     {
       text: "Data",
       items: menuData,
     },
-    {
-      text: "Landing",
-      items: [
-        ...menuLanding,
-        // {
-        //   icon: "mdi-airplane-landing",
-        //   key: "menu.landingPage",
-        //   text: "Landing Page",
-        //   link: "/landing",
-        // },
-      ],
-    },
+    // {
+    //   text: "Landing",
+    //   items: [
+    //     ...menuLanding,
+    //     // {
+    //     //   icon: "mdi-airplane-landing",
+    //     //   key: "menu.landingPage",
+    //     //   text: "Landing Page",
+    //     //   link: "/landing",
+    //     // },
+    //   ],
+    // },
 
-    {
-      text: "UI - Theme Preview",
-      items: menuUI,
-    },
-    {
-      text: "Pages",
-      key: "menu.pages",
-      items: menuPages,
-    },
-    {
-      text: "Charts",
-      key: "menu.charts",
-      items: menuCharts,
-    },
-    {
-      text: "UML",
-      // key: "menu.uml",
-      items: menuUML,
-    },
+    // {
+    //   text: "UI - Theme Preview",
+    //   items: menuUI,
+    // },
+    // {
+    //   text: "Pages",
+    //   key: "menu.pages",
+    //   items: menuPages,
+    // },
+    // {
+    //   text: "Charts",
+    //   key: "menu.charts",
+    //   items: menuCharts,
+    // },
+    // {
+    //   text: "UML",
+    //   // key: "menu.uml",
+    //   items: menuUML,
+    // },
   ],
 };

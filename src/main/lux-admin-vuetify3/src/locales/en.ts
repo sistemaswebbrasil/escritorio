@@ -36,6 +36,7 @@ export default {
   menu: {
     search: 'Search (press "ctrl + /" to focus)',
     dashboard: "Dashboard",
+    home: "Home",
     logout: "Logout",
     profile: "Profile",
     blank: "Blank Page",

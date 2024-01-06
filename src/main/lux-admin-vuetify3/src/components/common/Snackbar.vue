@@ -17,15 +17,27 @@ const getIcon = (type) => {
   <div>
     <v-snackbar
       v-model="snackbarStore.isShow"
-      timeout="2000"
+      timeout="10000"
       :color="snackbarStore.type"
       class="elevation-10"
       location="top"
+      vertical
     >
       <div class="d-flex align-center">
         <v-icon class="mr-2">{{ getIcon(snackbarStore.type) }}</v-icon>
         <span> {{ snackbarStore.message }}</span>
       </div>
+
+      <ul class="ma-5" v-if="snackbarStore.messages.length > 0">
+        <li
+          v-for="(message, key) in snackbarStore.messages"
+          :key="key"
+          :value="message"
+          class="mb-2"
+        >
+          {{ message }}
+        </li>
+      </ul>
 
       <template v-slot:actions>
         <v-btn icon variant="text" @click="snackbarStore.isShow = false">

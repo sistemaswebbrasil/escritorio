@@ -67,7 +67,7 @@ export default [
   },
   {
     icon: "mdi-format-list-text",
-    text: "VirtualList",
+    text: "sssss",
     link: "/ui/virtual-list",
     key: "menu.virtualList",
   },

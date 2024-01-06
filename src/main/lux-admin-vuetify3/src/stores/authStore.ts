@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { login } from "~/src/api/mainApi";
 
 import router from "@/router";
 
@@ -35,8 +36,17 @@ export const useAuthStore = defineStore("auth", {
       router.push("/");
     },
 
-    loginWithEmailAndPassword(email: string, password: string) {
-      router.push("/");
+    async loginWithEmailAndPassword(email: string, password: string) {
+      try {
+        const response = await login({ email, password });
+        console.log("?????????????????????");
+        console.log(response);
+        return response;
+      } catch (error) {
+        return error;
+      }
+      // localStorage.setItem("user", "Usuário Temporário");
+      // router.push("/");
     },
 
     loginWithGoogle() {
