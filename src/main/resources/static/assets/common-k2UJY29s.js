@@ -1,0 +1,1 @@
+const s=o=>{const t=["B","KB","MB","GB","TB"];let r=0;for(;o>=1024&&r<t.length-1;)o/=1024,r++;return`${o.toFixed(2)} ${t[r]}`},c=(o,t={behavior:"auto"})=>{o==null||o.scrollTo({...t,top:o.scrollHeight})};export{s as f,c as s};

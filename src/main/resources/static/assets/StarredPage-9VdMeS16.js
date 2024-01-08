@@ -1,0 +1,1 @@
+import{u as t,E as o}from"./EmailList-3z0qwELO.js";import{d as a,o as r,i as s,j as i}from"./index-5UehqYXh.js";import"./VAlert-c8-vbVRO.js";import"./VCheckboxBtn-3B9J-9Rl.js";import"./VChip-4-pLF36n.js";const d=a({__name:"StarredPage",setup(m){const e=t();return(n,p)=>(r(),s(o,{emails:i(e).getInboxList},null,8,["emails"]))}});export{d as default};

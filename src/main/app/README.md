@@ -1,79 +1,144 @@
-# Vuetify (Default)
+<br><br>
 
-This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
+<p align='center' >
+  <img  src='/src/assets/logo_light.svg' alt='Vuetify3' width='300'/>
+</p>
+<br><br>
 
-## ❗️ Important Links
+<p align="center">
+  <a href="https://vuejs.org/">
+    <img src="https://img.shields.io/badge/vue-v3.2.47-brightgreen.svg" alt="vue">
+  </a>
+  <a href="https://vuetifyjs.com/">
+    <img src="https://img.shields.io/badge/vuetify-v3.1.13-blue.svg" alt="element-ui">
+  </a>
+    <a href="https://vitejs.dev/">
+    <img src="https://img.shields.io/badge/vite-v4.2.1-blueviolet.svg" alt="element-ui">
+  </a>
+  
+  <a href="https://github.com/yangjiakai/lux-admin-vuetify3/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
+  </a>
+</p>
 
-- 📄 [Docs](https://vuetifyjs.com/)
-- 🚨 [Issues](https://issues.vuetifyjs.com/)
-- 🏬 [Store](https://store.vuetifyjs.com/)
-- 🎮 [Playground](https://play.vuetifyjs.com/)
-- 💬 [Discord](https://community.vuetifyjs.com)
+<h4 align='center'>
+<a href="https://lux.vuetify3.com/">Live Demo</a>
+</h4>
 
-## 💿 Install
+<br>
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
+<p align='center'>
+<b>English</b> | <a href="https://github.com/yangjiakai/jk-vuetify3-lux-admin/blob/main/README.zh-CN.md">简体中文</a>| <a href="https://github.com/yangjiakai/jk-vuetify3-lux-admin/blob/main/README.jp.md">日本語</a>
+</p>
 
-| Package Manager                                                | Command        |
-|---------------------------------------------------------------|----------------|
-| [yarn](https://yarnpkg.com/getting-started)                   | `yarn install` |
-| [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install`  |
-| [pnpm](https://pnpm.io/installation)                          | `pnpm install` |
-| [bun](https://bun.sh/#getting-started)                        | `bun install`  |
+## 📖Introduction
 
-After completing the installation, your environment is ready for Vuetify development.
+> Goal: Creating the best Vuetify 3 Admin open-source template.
 
-## ✨ Features
+Built upon the elegant themes of Vuetify, we have established a clear and efficient project structure, integrating the latest technology frameworks. This project aims to address a wide range of common technical requirements and features, while incorporating an AI assistant for a more intelligent experience. Additionally, we ensure that all pages are adaptive across multiple devices, achieving a seamless cross-platform compatibility.
 
-- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
-- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
-- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
-- 💻 **Enhanced Development Experience**: Benefit from TypeScript's static type checking and the ESLint plugin suite for Vue, ensuring code quality and consistency. [TypeScript](https://www.typescriptlang.org/) | [ESLint Plugin Vue](https://eslint.vuejs.org/)
-- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
-- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
-- 🛠️ **Strongly-Typed Vue**: Use vue-tsc for type-checking your Vue components, and enjoy a robust development experience. [vue-tsc](https://github.com/johnsoncodehk/volar/tree/master/packages/vue-tsc)
+## 📖Other Versions
 
-These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable.
+SPA Full Version: [lux-vuetify3](https://github.com/yangjiakai/lux-nuxt3)
 
-## 💡 Usage
+SPA Simplified i18n Version[lux-vuetify3-i18n](https://github.com/yangjiakai/vuetify3-lux-admin-template-i18n)
 
-This section covers how to start the development server and build your project for production.
+SPA Simplified chinese Version[lux-vuetify3-zh](https://github.com/yangjiakai/vuetify3-lux-admin-template-zh)
 
-### Starting the Development Server
+Nuxt3 version:
 
-To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
+Nuxt3 Full Version [lux-nuxt3](https://github.com/yangjiakai/lux-nuxt3)
 
-```bash
+Nuxt3 Simplified Version [lux-nuxt3-template](https://github.com/yangjiakai/lux-nuxt3-template)
+
+## 📖Documents
+
+- 📖 [Document 1.0 Chinese](https://www.craft.me/s/tAMVv4hUxZIH6G)
+
+## 📚Features
+
+- 📖 [Vue 3.2](https://github.com/vuejs/core)
+- 📖 [Vite 4.x](https://github.com/vitejs/vite)
+- 📖 UI Framework [Vuetify 3](https://next.vuetifyjs.com/en/)
+- 📖 TypeScript
+- 📦 Component Auto Importing
+- 🍍 [Pinia](https://pinia.vuejs.org/)
+- 📔 `<script setup>`
+- 📚 Use icons from any icon sets in [Iconify](https://icon-sets.iconify.design/)
+- ☁️ Deploy on Netlify, zero-config
+- 🔑 Firebase auth
+- 📈 Echarts, ApexChart
+- 🧭 Openai, Chatgpt
+- 🌍 vue-i18n
+- 📚 virtual-scroller , vuedraggable , perfect-scrollbar
+- 📝 Rich Text Editor
+- 📇 Responsive multi-platform adaptive
+
+## 📈 Project Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/306361b2af1a8556f64a0a828e1726a94bff36f0.svg "Repobeats analytics image")
+
+## 💬Contact Me
+
+- Email <a href="mailto:yjkbako@gmail.com">yjkbako@gmail.com</a>
+- Twitter https://twitter.com/baibaixiang
+- Wechat <img  src='/src/assets/wechat-qrcode.png'  alt='DashBoard' width='300' />
+
+## 💌Preview
+
+<img  src='/src/assets/previews/DashBoard.png'  alt='DashBoard' />
+<img  src='/src/assets/previews/TaskBoard.png'  alt='ChatGPT' />
+<img  src='/src/assets/previews/DataTable.png'  alt='DataTable' />
+<img  src='/src/assets/previews/Todo.png'  alt='ChatGPT' />
+<img  src='/src/assets/previews/ChatGPT.png'  alt='ChatGPT' />
+<img  src='/src/assets/previews/Card.png'  alt='Card' />
+<img  src='/src/assets/previews/Color.png'  alt='Color' />
+<img  src='/src/assets/previews/Gradient.png'  alt='Gradient' />
+<img  src='/src/assets/previews/Login.png'  alt='ChatGPT' />
+<img  src='/src/assets/previews/Unsplash.png'  alt='ChatGPT' />
+<img  src='/src/assets/previews/Unsplash2.png'  alt='ChatGPT' />
+
+<br>
+
+## 📦Pre-packed
+
+### 🏷️ UI Frameworks
+
+- [Vuetify3](https://next.vuetifyjs.com/en/) - Vuetify is a no design skills required UI Framework with beautifully handcrafted Vue Components.
+
+### 🏷️ Icons
+
+- [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
+- [Pure CSS Icons via UnoCSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
+
+### 🏷️ Plugins
+
+- [Vue Router4](https://router.vuejs.org/)
+- [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
+- [VuedDaggable](https://github.com/SortableJS/Vue.Draggable) - allowing drag-and-drop and synchronization with view model array.
+- [Vue-Masonry-Wall](https://github.com/DerYeger/yeger/tree/main/packages/vue-masonry-wall) - Responsive masonry layout with SSR support and zero dependencies for Vue 3.
+- [Vue-Virtual-Scroller](https://github.com/Akryum/vue-virtual-scroller) - Blazing fast scrolling of any amount of data
+
+## 👻Try it now!
+
+```
+git clone https://github.com/yangjiakai/lux-admin-vuetify3.git
+
+cd lux-admin-vuetify3
+
+yarn install
+
 yarn dev
 ```
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+### 🔑Set ApiKey
 
-### Building for Production
+Find the `.env.template` file in the root directory, remove the `.template` suffix, and replace` VITE_OPENAI_API_KEY`, `VITE_UNSPLASH_ACCESS_KEY`, and `VITE_GITHUB_CLIENT_ID`, and `VITE_TTS_KEY` and `VITE_TTS_REGION` with your own keys.
 
-To build your project for production, use:
+> openai apikey： https://platform.openai.com/account/api-keys
 
-```bash
-yarn build
-```
+> unsplash apikey： https://unsplash.com/oauth/applications
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+> github apikey： https://github.com/settings/tokens
 
-Once the build process is completed, your application will be ready for deployment in a production environment.
-
-## 💪 Support Vuetify Development
-
-This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library with a comprehensive collection of Vue components. Vuetify is an MIT licensed Open Source project that has been made possible due to the generous contributions by our [sponsors and backers](https://vuetifyjs.com/introduction/sponsors-and-backers/). If you are interested in supporting this project, please consider:
-
-- [Requesting Enterprise Support](https://support.vuetifyjs.com/)
-- [Sponsoring John on Github](https://github.com/users/johnleider/sponsorship)
-- [Sponsoring Kael on Github](https://github.com/users/kaelwd/sponsorship)
-- [Supporting the team on Open Collective](https://opencollective.com/vuetify)
-- [Becoming a sponsor on Patreon](https://www.patreon.com/vuetify)
-- [Becoming a subscriber on Tidelift](https://tidelift.com/subscription/npm/vuetify)
-- [Making a one-time donation with Paypal](https://paypal.me/vuetify)
-
-## 📑 License
-[MIT](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2016-present Vuetify, LLC
+> azure textToSpeech : https://speech.microsoft.com/
