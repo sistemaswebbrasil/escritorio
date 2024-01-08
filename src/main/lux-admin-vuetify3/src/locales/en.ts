@@ -21,6 +21,7 @@ export default {
     noaccount: "Don't have an account?",
     create: "Create one here",
     error: "The email / password combination is invalid",
+    welcome: "Welcome {username}",
   },
   register: {
     title: "Create Account",
@@ -68,6 +69,7 @@ export default {
     errorPages: "Error Pages",
     errorNotFound: "Not Found / 404",
     errorUnexpected: "Unexpected / 500",
+    errorAccessDenied: "Access Denied",
     utilityPages: "Utility Pages",
     utilityMaintenance: "Maintenance",
     utilitySoon: "Coming Soon",

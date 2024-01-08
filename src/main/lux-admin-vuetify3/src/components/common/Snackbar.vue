@@ -21,14 +21,16 @@ const getIcon = (type) => {
       :color="snackbarStore.type"
       class="elevation-10"
       location="top"
-      vertical
     >
       <div class="d-flex align-center">
         <v-icon class="mr-2">{{ getIcon(snackbarStore.type) }}</v-icon>
         <span> {{ snackbarStore.message }}</span>
       </div>
 
-      <ul class="ma-5" v-if="snackbarStore.messages.length > 0">
+      <ul
+        class="ma-5"
+        v-if="snackbarStore.messages && snackbarStore.messages.length > 0"
+      >
         <li
           v-for="(message, key) in snackbarStore.messages"
           :key="key"

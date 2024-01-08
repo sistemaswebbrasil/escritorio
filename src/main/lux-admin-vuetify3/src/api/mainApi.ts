@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useSnackbarStore } from "@/stores/snackbarStore";
+import i18n from "@/plugins/i18n";
 
 // change the access key to your own
 
@@ -56,16 +57,19 @@ instance.interceptors.response.use(
 );
 
 export const login = async (formData: any) => {
-  await instance.post("/auth/token", formData);
-  // try {
-  //   const data = await instance.post("/auth/token", formData);
-  //   console.log(data);
-  //   return data;
-  // } catch (error) {
-  //   const snackbarStore = useSnackbarStore();
-  //   snackbarStore.showErrorMessage("Network Error");
-  //   return error;
-  // }
+  const snackbarStore = useSnackbarStore();
+  try {
+    const response = await instance.post("/auth/token", formData);
+    const { data } = response;
+    const username = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+    snackbarStore.showSuccessMessage(
+      i18n.global.t("login.welcome", { username })
+    );
+    return response;
+  } catch (error) {
+    snackbarStore.showErrorMessage(String(i18n.global.t("login.error")), null);
+    return error;
+  }
 };
 
 interface Query {

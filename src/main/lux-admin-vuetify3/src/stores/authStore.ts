@@ -38,15 +38,16 @@ export const useAuthStore = defineStore("auth", {
 
     async loginWithEmailAndPassword(email: string, password: string) {
       try {
-        const response = await login({ email, password });
-        console.log("?????????????????????");
-        console.log(response);
-        return response;
+        const { data } = await login({ email, password });
+        const { name, token } = data;
+        localStorage.setItem("user", name);
+        localStorage.setItem("token", token);
+        console.log(data);
+        router.push("/");
+        return data;
       } catch (error) {
         return error;
       }
-      // localStorage.setItem("user", "Usuário Temporário");
-      // router.push("/");
     },
 
     loginWithGoogle() {
@@ -54,6 +55,8 @@ export const useAuthStore = defineStore("auth", {
     },
 
     logout() {
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
       router.push({ name: "auth-signin" });
     },
   },

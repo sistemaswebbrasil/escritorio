@@ -7,8 +7,8 @@ const isLoading = ref(false);
 const isSignInDisabled = ref(false);
 
 const refLoginForm = ref();
-const email = ref("a");
-const password = ref("a");
+const email = ref("admin@escritorio.com");
+const password = ref("Senha@123");
 const isFormValid = ref(true);
 
 // show password field
@@ -16,7 +16,7 @@ const showPassword = ref(false);
 
 const handleLogin = async () => {
   const { valid } = await refLoginForm.value.validate();
-  // if (!valid) return;
+  if (!valid) return;
 
   try {
     isLoading.value = true;
