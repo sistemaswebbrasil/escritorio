@@ -72,6 +72,18 @@ export const login = async (formData: any) => {
   }
 };
 
+interface Profile {
+  id: string;
+  name: string;
+  email: string;
+  roles: string[];
+}
+
+export const getProfile = async ():Promise<Profile> => {
+  const {data} = await instance.get("/auth/profile");
+  return data;
+};
+
 interface Query {
   page?: number;
   per_page?: number;

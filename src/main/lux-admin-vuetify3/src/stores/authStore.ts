@@ -1,13 +1,14 @@
+import { profile } from './../api/mainApi';
 import { defineStore } from "pinia";
-import { login } from "~/src/api/mainApi";
+import { login,getProfile } from "~/src/api/mainApi";
 
 import router from "@/router";
 
 interface Profile {
   id: string;
   name: string;
-  avatar: string;
-  created: boolean;
+  email: string;
+  roles: string[];
 }
 
 export const useAuthStore = defineStore("auth", {
@@ -47,6 +48,18 @@ export const useAuthStore = defineStore("auth", {
         return data;
       } catch (error) {
         return error;
+      }
+    },
+
+    async getProfile() {
+      try {
+        const  data = await getProfile() ;
+        this.user  = data.email;
+        this.setLoggedIn(true)
+        this.profile = data
+        return data;
+      } catch (error) {
+        this.logout();
       }
     },
 

@@ -1,15 +1,20 @@
 <!--
 * @Component: ToolbarNotifications
 * @Maintainer: J.K. Yang
-* @Description: 
+* @Description:
 -->
 <script setup lang="ts">
 import StatusMenu from "./StatusMenu.vue";
 import { useAuthStore } from "@/stores/authStore";
+
+
+
+
 import { useRouter } from "vue-router";
 const router = useRouter();
 
 const authStore = useAuthStore();
+const { profile } = storeToRefs(authStore);
 const handleLogout = () => {
   authStore.logout();
   console.log("---");
@@ -91,12 +96,12 @@ const navs = [
           </template>
 
           <v-list-item-title class="font-weight-bold text-primary">
-            YANG J.K.
+            {{ profile?.name }}
             <StatusMenu />
           </v-list-item-title>
           <v-list-item-subtitle>
             <!-- {{ $store.state.user.email  }} -->
-            yjkbako@gmail.com
+            {{ profile?.email }}
           </v-list-item-subtitle>
         </v-list-item>
       </v-list>
