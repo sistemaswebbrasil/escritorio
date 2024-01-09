@@ -1,0 +1,1 @@
+import{T as e}from"./TodoList-Z-DNimMc.js";import{d as t,M as s,o as r,i as a,j as n}from"./index-LbRqvFTT.js";import"./VCheckboxBtn-H_N9yJP6.js";import"./VChip-7L4e3odN.js";const u=t({__name:"CompletedPage",setup(p){const o=s();return(m,c)=>(r(),a(e,{tasks:n(o).getCompletedTodos},null,8,["tasks"]))}});export{u as default};

@@ -1,0 +1,1 @@
+import{u as t,E as o}from"./EmailList-BHAyxMBh.js";import{d as a,o as r,i as s,j as i}from"./index-LbRqvFTT.js";import"./VAlert-j6q5rTXQ.js";import"./VCheckboxBtn-H_N9yJP6.js";import"./VChip-7L4e3odN.js";const d=a({__name:"DraftsPage",setup(m){const e=t();return(n,p)=>(r(),s(o,{emails:i(e).getInboxList},null,8,["emails"]))}});export{d as default};

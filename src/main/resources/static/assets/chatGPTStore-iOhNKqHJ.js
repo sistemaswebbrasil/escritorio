@@ -1,0 +1,1 @@
+import{U as t}from"./index-YGJtlbDp.js";const p=t({id:"chatGPT",state:()=>({propmpt:"",configDialog:!1,apiKey:"",proxyUrl:"https://openai.wndbac.cn",model:"gpt-3.5-turbo"}),persist:{enabled:!0,strategies:[{storage:localStorage,paths:["propmpt","apiKey","proxyUrl","model"]}]},getters:{getApiKey:e=>e.apiKey},actions:{updatePropmpt(){},updateModel(e){this.model=e}}});export{p as u};
