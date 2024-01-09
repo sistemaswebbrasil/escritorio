@@ -145,6 +145,7 @@
 							<goal>yarn</goal>
 						</goals>
 						<configuration>
+							 <yarnInheritsProxyConfigFromMaven>false</yarnInheritsProxyConfigFromMaven>
 							<arguments>build</arguments>
 							<environmentVariables>
 								<NODE_ENV>production</NODE_ENV>
