@@ -1,0 +1,1 @@
+import{u as o,E as t}from"./EmailList-riFu7jRM.js";import{d as a,o as r,i as s,j as i}from"./index-Ks8zWVSz.js";import"./VAlert-hb3r6nXk.js";import"./VCheckboxBtn-dozI2_ZL.js";import"./VChip-XsjWI6vg.js";const d=a({__name:"SendPage",setup(m){const e=o();return(n,p)=>(r(),s(t,{emails:i(e).getInboxList},null,8,["emails"]))}});export{d as default};
