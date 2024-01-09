@@ -17,7 +17,9 @@ import HomePageVue from "../views/pages/HomePage.vue";
 export const routes = [
   {
     path: "/",
+    name: "home",
     meta: {
+      title: "menu.home",
       requiresAuth: true,
       layout: "landing",
     },
@@ -54,7 +56,9 @@ export const routes = [
 export const dynamicRoutes = [];
 
 const router = createRouter({
-  history: createWebHistory(),
+  // history: createWebHistory(),
+  history: createWebHistory(import.meta.env.VITE_API_BASE_URL),
+
   // hash模式：createWebHashHistory，history模式：createWebHistory
   // process.env.NODE_ENV === "production"
 

@@ -10,7 +10,7 @@ import Animation404 from "@/components/animations/Animation404.vue";
     <div>
       <Animation404 />
 
-      <v-btn flat color="#00A9D7" class="mb-4 text-white" to="/"
+      <v-btn flat color="#00A9D7" class="mb-4 text-white" :to="{ name: 'home' }"
         >Go Back to Home</v-btn
       >
     </div>
