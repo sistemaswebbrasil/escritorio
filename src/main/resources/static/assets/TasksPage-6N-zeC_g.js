@@ -1,0 +1,1 @@
+import{T as t}from"./TodoList-3n_D_vDp.js";import{d as s,M as e,o as a,i as r,j as n}from"./index-peTGnuZv.js";import"./VCheckboxBtn-p360aezY.js";import"./VChip-q1dYm6WX.js";const f=s({__name:"TasksPage",setup(p){const o=e();return(c,i)=>(a(),r(t,{tasks:n(o).getTodoList},null,8,["tasks"]))}});export{f as default};

@@ -10,6 +10,7 @@ export default {
     contact: "Contact Us",
     tos: "Terms of Service",
     policy: "Privacy Policy",
+    list: "List",
   },
   login: {
     title: "Sign In",

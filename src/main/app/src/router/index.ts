@@ -34,6 +34,32 @@ export const routes = [
     component: () => import("@/views/pages/DashBoard.vue"),
   },
   {
+    path: "/users",
+    name: "UserList",
+    component: () =>
+      import(
+        /* webpackChunkName: "chart-echart-line" */ "@/domain/user/UserList.vue"
+      ),
+    meta: {
+      requiresAuth: true,
+      layout: "ui",
+      category: "Chart",
+      links: [
+        { title: "menu.home", to: { name: "home" }, disable: false },
+        { title: "menu.users", to: { name: "UserList" }, disable: false },
+        { title: "common.list", to: "/users/form", disable: true },
+      ],
+
+      //       {
+      //   title: i18.t(String(route.meta.category)),
+      //   disabled: false,
+      //   to: "/",
+      // },
+
+      title: "menu.users",
+    },
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "error",
     component: () =>

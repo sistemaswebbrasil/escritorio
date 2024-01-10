@@ -93,6 +93,15 @@ export const getProfile = async (): Promise<Profile> => {
   return data;
 };
 
+export const listUsers = async (): Promise<Profile> => {
+  const { data } = await instance.get("/admin/users", {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
+  return data;
+};
+
 interface Query {
   page?: number;
   per_page?: number;

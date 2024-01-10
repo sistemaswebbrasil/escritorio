@@ -34,20 +34,40 @@ export default {
           text: "Signin / Login",
           link: "/auth/signin",
         },
+        {
+          icon: "mdi-account",
+          text: "Users",
+          link: "/users",
+          key: "menu.users",
+        },
+        // {
+        //   path: "/users",
+        //   name: "UserList",
+        //   component: () =>
+        //     import(
+        //       /* webpackChunkName: "chart-echart-line" */ "@/domain/user/UserList.vue"
+        //     ),
+        //   meta: {
+        //     requiresAuth: true,
+        //     layout: "ui",
+        //     category: "Chart",
+        //     title: "Echart Line",
+        //   },
+        // },
       ],
     },
-    {
-      text: "chatgpt",
-      items: menuAi,
-    },
     // {
-    //   text: "Apps",
-    //   items: menuApps,
+    //   text: "chatgpt",
+    //   items: menuAi,
     // },
-    {
-      text: "Data",
-      items: menuData,
-    },
+    // // {
+    // //   text: "Apps",
+    // //   items: menuApps,
+    // // },
+    // {
+    //   text: "Data",
+    //   items: menuData,
+    // },
     // {
     //   text: "Landing",
     //   items: [
@@ -61,24 +81,24 @@ export default {
     //   ],
     // },
 
-    // {
-    //   text: "UI - Theme Preview",
-    //   items: menuUI,
-    // },
-    // {
-    //   text: "Pages",
-    //   key: "menu.pages",
-    //   items: menuPages,
-    // },
-    // {
-    //   text: "Charts",
-    //   key: "menu.charts",
-    //   items: menuCharts,
-    // },
-    // {
-    //   text: "UML",
-    //   // key: "menu.uml",
-    //   items: menuUML,
-    // },
+    //   {
+    //     text: "UI - Theme Preview",
+    //     items: menuUI,
+    //   },
+    //   {
+    //     text: "Pages",
+    //     key: "menu.pages",
+    //     items: menuPages,
+    //   },
+    //   {
+    //     text: "Charts",
+    //     key: "menu.charts",
+    //     items: menuCharts,
+    //   },
+    //   {
+    //     text: "UML",
+    //     // key: "menu.uml",
+    //     items: menuUML,
+    //   },
   ],
 };
