@@ -1,0 +1,1 @@
+import{T as s}from"./TodoList--9JdBG6j.js";import{d as a,M as r,cL as n,x as c,o as p,i as u,j as m}from"./index-JShR_LJD.js";import"./VCheckboxBtn-B_eU9FWk.js";import"./VChip-41DVSl6f.js";const k=a({__name:"LabelPage",setup(i){const o=r(),t=n();return c(()=>t.params.id,e=>{o.currentLabel=e}),(e,d)=>(p(),u(s,{tasks:m(o).getLabelTodos},null,8,["tasks"]))}});export{k as default};

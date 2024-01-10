@@ -44,12 +44,7 @@ export const useAuthStore = defineStore("auth", {
         localStorage.setItem("token", token);
         this.setLoggedIn(true);
         this.user = data.email;
-        this.profile = {
-          id: data.id,
-          name: data.name,
-          email: data.email,
-          roles: data.roles,
-        };
+        this.getProfile();
         router.push("/");
         return data;
       } catch (error) {
@@ -57,7 +52,7 @@ export const useAuthStore = defineStore("auth", {
       }
     },
 
-    async getProfile(token) {
+    async getProfile() {
       try {
         const data = await getProfile();
         this.user = data.email;

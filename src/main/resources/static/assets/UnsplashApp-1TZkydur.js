@@ -1,0 +1,1 @@
+import{_ as s,h as c,a as r,b as e,w as a,o,a6 as _,i as l,ct as i}from"./index-JShR_LJD.js";const p={};function f(m,d){const t=c("router-view");return o(),r("div",null,[e(t,{class:"gp"},{default:a(({Component:n})=>[e(_,{name:"fade"},{default:a(()=>[(o(),l(i(n)))]),_:2},1024)]),_:1})])}const v=s(p,[["render",f]]);export{v as default};

@@ -37,6 +37,7 @@ public class SecurityConfig {
 			"/img/**", 
 			"/fonts/**", 
 			"/favicon.ico",
+			"/favicon.png",
 			"/api/register",
 			"/token",
 			"/api/auth/token",
@@ -54,7 +55,7 @@ public class SecurityConfig {
 			authorize.requestMatchers(AUTH_WHITELIST).permitAll();
 			authorize.anyRequest().authenticated();
 		})
-		.csrf(AbstractHttpConfigurer::disable)   
+		.csrf(AbstractHttpConfigurer::disable) 
 		.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))		
 		.addFilterBefore(jwtAuthorizationFilter,UsernamePasswordAuthenticationFilter.class);
 		return http.build();

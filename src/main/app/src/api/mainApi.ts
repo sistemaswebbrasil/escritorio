@@ -2,15 +2,22 @@ import axios from "axios";
 import { useSnackbarStore } from "@/stores/snackbarStore";
 import i18n from "@/plugins/i18n";
 
-// change the access key to your own
-
-const token = localStorage.getItem("token");
-
 const instance = axios.create({
-  baseURL: "http://127.0.0.1:8080/api",
+  baseURL: `${import.meta.env.VITE_BASE_API}/api`,
   timeout: 20000,
-  headers: token ? { Authorization: "Bearer" + " " + token } : {},
 });
+
+instance.interceptors.request.use(
+  (defaults) => {
+    const config = defaults;
+    const token = localStorage.getItem("token");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (errors) => Promise.reject(errors)
+);
 
 instance.interceptors.response.use(
   (response) => {
@@ -19,36 +26,19 @@ instance.interceptors.response.use(
   (error) => {
     const snackbarStore = useSnackbarStore();
     if (error.response) {
-      console.log(error);
-
       const data = error.response.data;
-
       let message = data.message;
-
       if (data.errors) {
-        console.log(data.errors);
         const arr = Object.keys(data.errors).map((k) => {
           return { key: k, data: data.errors[k] };
         });
-
-        // message = "";
-        // arr.forEach((m) => {
-        //   message += `<p>* ${m.key}:  ${m.data}`;
-        // });
 
         const messages = arr.map((e) => {
           return `${e.key}:  ${e.data} `;
         });
 
         snackbarStore.showErrorMessage(message, messages);
-      }
-
-      // console.log(JSON.stringify(data.errors));
-      // let arr = Object.keys(data.errors).map((k) => {
-      //   return { key: k, data: data.errors[k] };
-      // });
-      // console.log(arr);
-      else snackbarStore.showErrorMessage(message || error.message, []);
+      } else snackbarStore.showErrorMessage(message || error.message, []);
     } else {
       snackbarStore.showErrorMessage("Network Error", null);
     }
@@ -79,26 +69,13 @@ interface Profile {
   roles: string[];
 }
 
-// export const getProfile = async (): Promise<Profile> => {
-//   const { data } = await instance.get("/auth/profile");
-//   return data;
-// };
-
 export const getProfile = async (): Promise<Profile> => {
-  const { data } = await instance.get("/auth/profile", {
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-  });
+  const { data } = await instance.get("/auth/profile");
   return data;
 };
 
 export const listUsers = async (): Promise<Profile> => {
-  const { data } = await instance.get("/admin/users", {
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-  });
+  const { data } = await instance.get("/admin/users");
   return data;
 };
 
