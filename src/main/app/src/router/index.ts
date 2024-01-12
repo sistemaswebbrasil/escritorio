@@ -49,14 +49,26 @@ export const routes = [
         { title: "menu.users", to: { name: "UserList" }, disable: false },
         { title: "common.list", to: "/users/form", disable: true },
       ],
-
-      //       {
-      //   title: i18.t(String(route.meta.category)),
-      //   disabled: false,
-      //   to: "/",
-      // },
-
       title: "menu.users",
+    },
+  },
+  {
+    path: "/roles",
+    name: "RoleList",
+    component: () =>
+      import(
+        /* webpackChunkName: "chart-echart-line" */ "@/domain/role/RoleList.vue"
+      ),
+    meta: {
+      requiresAuth: true,
+      layout: "ui",
+      category: "Chart",
+      links: [
+        { title: "menu.home", to: { name: "home" }, disable: false },
+        { title: "menu.roles", to: { name: "RoleList" }, disable: false },
+        { title: "common.list", to: "/roles/form", disable: true },
+      ],
+      title: "menu.roles",
     },
   },
   {

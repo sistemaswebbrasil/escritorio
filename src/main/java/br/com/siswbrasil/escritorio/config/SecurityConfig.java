@@ -45,7 +45,7 @@ public class SecurityConfig {
 			"/error",
 			"/swagger-ui.html",
 			"/swagger-ui/**",
-			"/v3/**",
+			"/v3/api-docs/**",
 			"/api/auth"
 			// @formatter:on
 	};

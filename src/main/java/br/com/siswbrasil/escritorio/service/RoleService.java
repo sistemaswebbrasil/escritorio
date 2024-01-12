@@ -17,8 +17,9 @@ public class RoleService {
 	private RoleRepository repository;
 
 	@Transactional
-	public Role create(Role role) {
-		return repository.save(role);
+	public Role create(Role form) {
+		form.setId(null);
+		return repository.save(form);
 	}
 
 	public Role getById(Long id) {

@@ -17,6 +17,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.HttpClientErrorException.Forbidden;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -84,6 +85,17 @@ public class GlobalExceptionHandler {
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
 				.body(new DefaultException(message));
 	}
+	
+	
+	
+	
+	@ExceptionHandler(NoResourceFoundException.class)
+	public ResponseEntity<DefaultException> IllegalStateException(NoResourceFoundException e) {
+
+		return ResponseEntity.status(HttpStatus.NOT_FOUND)
+				.body(new DefaultException(HttpStatus.NOT_FOUND.getReasonPhrase()));
+	}
+
 
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<DefaultException> runtimeException(RuntimeException e) {

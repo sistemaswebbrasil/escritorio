@@ -35,25 +35,25 @@ export default {
           link: "/auth/signin",
         },
         {
-          icon: "mdi-account",
-          text: "Users",
-          link: "/users",
-          key: "menu.users",
+          icon: "mdi-file-lock-outline",
+          key: "menu.admin",
+          text: "Admin",
+          regex: /^\/auth/,
+          items: [
+            {
+              icon: "mdi-account",
+              text: "Users",
+              link: "/users",
+              key: "menu.users",
+            },
+            {
+              icon: "mdi-account",
+              text: "Roles",
+              link: "/roles",
+              key: "menu.roles",
+            },
+          ],
         },
-        // {
-        //   path: "/users",
-        //   name: "UserList",
-        //   component: () =>
-        //     import(
-        //       /* webpackChunkName: "chart-echart-line" */ "@/domain/user/UserList.vue"
-        //     ),
-        //   meta: {
-        //     requiresAuth: true,
-        //     layout: "ui",
-        //     category: "Chart",
-        //     title: "Echart Line",
-        //   },
-        // },
       ],
     },
     // {
@@ -85,11 +85,11 @@ export default {
     //     text: "UI - Theme Preview",
     //     items: menuUI,
     //   },
-    //   {
-    //     text: "Pages",
-    //     key: "menu.pages",
-    //     items: menuPages,
-    //   },
+    // {
+    //   text: "Pages",
+    //   key: "menu.pages",
+    //   items: menuPages,
+    // },
     //   {
     //     text: "Charts",
     //     key: "menu.charts",

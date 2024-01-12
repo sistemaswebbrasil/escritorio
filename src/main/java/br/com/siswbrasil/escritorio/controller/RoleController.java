@@ -42,6 +42,7 @@ public class RoleController implements RoleControllerOpenApi {
 	@Override
 	@PostMapping
 	public void create(@RequestBody @Valid Role form) {
+		System.out.println(form);
 		service.create(form);
 	}
 
@@ -53,7 +54,7 @@ public class RoleController implements RoleControllerOpenApi {
 
 	@Override
 	@DeleteMapping("/{id}")
-	public void deleteById(Long id) {
+	public void deleteById(@PathVariable Long id) {
 		service.deleteById(id);
 	}
 

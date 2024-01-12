@@ -69,6 +69,12 @@ interface Profile {
   roles: string[];
 }
 
+interface Role {
+  id: string;
+  name: string;
+  description: string;
+}
+
 export const getProfile = async (): Promise<Profile> => {
   const { data } = await instance.get("/auth/profile");
   return data;
@@ -77,6 +83,51 @@ export const getProfile = async (): Promise<Profile> => {
 export const listUsers = async (): Promise<Profile> => {
   const { data } = await instance.get("/admin/users");
   return data;
+};
+
+export const listRoles = async (): Promise<Role[]> => {
+  const { data } = await instance.get("/roles");
+  return data;
+};
+
+export const createRole = async (formData: Role) => {
+  const snackbarStore = useSnackbarStore();
+  try {
+    const response = await instance.post("/roles", formData);
+    const { data } = response;
+    snackbarStore.showSuccessMessage("Criado com sucesso");
+    return data;
+  } catch (error) {
+    snackbarStore.showErrorMessage(error, null);
+    return error;
+  }
+};
+
+export const updateRole = async (id: Number, form: Role) => {
+  const snackbarStore = useSnackbarStore();
+  try {
+    const response = await instance.put(`/roles/${id}`, form);
+    const { data } = response;
+    snackbarStore.showSuccessMessage("Atualizado com sucesso");
+    return data;
+  } catch (error) {
+    snackbarStore.showErrorMessage(error, null);
+    return error;
+  }
+};
+
+export const deleteRole = async (id: Number) => {
+  const snackbarStore = useSnackbarStore();
+  // try {
+  const response = await instance.delete(`/roles/${id}`);
+  const { data } = response;
+  snackbarStore.showSuccessMessage("Excluido com sucesso");
+  return data;
+  // } catch (error) {
+  //   console.log(error);
+  //   snackbarStore.showErrorMessage(error, null);
+  //   return error;
+  // }
 };
 
 interface Query {

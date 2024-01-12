@@ -35,3 +35,8 @@ mvn clean install -DskipTests && docker build -t sistemaswebbrasil/escritorio .
 ```bash
 docker run -p 8080:8080 sistemaswebbrasil/escritorio
 ```
+## Gerar os tipos do typescript apartir do swagger
+
+```bash
+ npx openapi-typescript http://127.0.0.1:8080/v3/api-docs/escritorio --output escritorio.ts 
+ ```
