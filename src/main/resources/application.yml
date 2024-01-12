@@ -14,7 +14,18 @@ spring:
       fail-on-unknown-properties: true
       fail-on-ignored-properties: true      
     locale: en_US    
-  
+springdoc:
+  cache:
+    disabled: true
+  swagger-ui:
+    use-root-path: true
+    operationsSorter: alpha
+    tagsSorter: alpha
+    doc-expansion: none
+app:
+  version: 0.0.1
+  name: Escritótio
+  description: Gerenciamento de escritótio   
 ---     
 spring:
   config:

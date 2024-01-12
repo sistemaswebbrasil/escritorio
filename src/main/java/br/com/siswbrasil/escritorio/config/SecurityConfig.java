@@ -43,6 +43,9 @@ public class SecurityConfig {
 			"/api/auth/token",
 			"/api/auth/register",
 			"/error",
+			"/swagger-ui.html",
+			"/swagger-ui/**",
+			"/v3/**",
 			"/api/auth"
 			// @formatter:on
 	};
