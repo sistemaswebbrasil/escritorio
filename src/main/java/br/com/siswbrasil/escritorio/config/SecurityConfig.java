@@ -46,7 +46,8 @@ public class SecurityConfig {
 			"/swagger-ui.html",
 			"/swagger-ui/**",
 			"/v3/api-docs/**",
-			"/api/auth"
+			"/api/auth",
+			"/h2-console/**"			
 			// @formatter:on
 	};
 	
@@ -57,8 +58,10 @@ public class SecurityConfig {
 		.authorizeHttpRequests((authorize) -> {
 			authorize.requestMatchers(AUTH_WHITELIST).permitAll();
 			authorize.anyRequest().authenticated();
+			
 		})
-		.csrf(AbstractHttpConfigurer::disable) 
+		.headers(header-> header.frameOptions(f -> f.sameOrigin()))
+		.csrf(AbstractHttpConfigurer::disable)
 		.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))		
 		.addFilterBefore(jwtAuthorizationFilter,UsernamePasswordAuthenticationFilter.class);
 		return http.build();

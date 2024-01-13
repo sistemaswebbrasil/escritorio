@@ -34,13 +34,10 @@ public class UserService {
 			var message = messageSource.getMessage("validation.email.uique", null, null);
 			throw new CustomException(HttpStatus.BAD_REQUEST, message);
 		}
-		;
 
 		User user = new User();
 		user.setEmail(form.getEmail());
 		user.setName(form.getName());
-		user.setRole("USER");
-
 		String password = form.getPassword();
 		String encodedPassword = bCryptPasswordEncoder.encode(password);
 		System.out.println("encoded password : " + encodedPassword);

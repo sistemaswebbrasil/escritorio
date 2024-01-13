@@ -36,7 +36,12 @@ public class RoleService {
 
 	@Transactional
 	public void deleteById(Long id) {
-		getById(id);
-		repository.deleteById(id);
+		var role = getById(id);
+		var inUse = role.getUsers().stream().filter(i -> i.getRoles().contains(role.getName())).findFirst().isPresent();
+		if (inUse) {
+			throw new CustomException(HttpStatus.BAD_REQUEST,
+					"Registro selecionado não pode excluído,pois já está em uso");
+		}
+		repository.delete(role);
 	}
 }

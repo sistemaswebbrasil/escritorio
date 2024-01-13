@@ -32,18 +32,20 @@ spring:
     activate:
       on-profile: dev  
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=Oracle;INIT=CREATE SCHEMA IF NOT EXISTS CABW;
+    url: jdbc:h2:mem:testdb;
     driverClassName: org.h2.Driver
     username: sa
-    password: password     
+    password:      
   jpa:
-    show-sql: false
+    show-sql: true
     database-platform: org.hibernate.dialect.H2Dialect   
     properties:
       hibernate: 
-        "[format_sql]": false    
+        "[format_sql]": true    
     hibernate:
       ddl-auto: create-drop
+  h2:
+    console.enabled: true      
 logging:
   level:
     root: INFO
@@ -53,12 +55,12 @@ logging:
         security: DEBUG
         boot:
 #          autoconfigure: DEBUG
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE      
+#      hibernate:
+#        SQL: DEBUG
+#        type:
+#          descriptor:
+#            sql:
+#              BasicBinder: TRACE      
   
 
 
