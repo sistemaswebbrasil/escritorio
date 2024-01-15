@@ -1,8 +1,5 @@
 package br.com.siswbrasil.escritorio.config;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -16,13 +13,13 @@ import io.swagger.v3.oas.models.security.SecurityScheme;
 @Configuration
 public class OpenApiConfig {
 	
-	@Value("${app.version}")
+//	@Value("${app.version}")
 	private String appVersion;	
 	
-	@Value("${app.name}")
+//	@Value("${app.name}")
 	private String appName;
 	
-	@Value("${app.description}")
+//	@Value("${app.description}")
 	private String description;		
 
 	@Bean
