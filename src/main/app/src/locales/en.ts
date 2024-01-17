@@ -11,6 +11,7 @@ export default {
     tos: "Terms of Service",
     policy: "Privacy Policy",
     list: "List",
+    form: "Form",
   },
   login: {
     title: "Sign In",

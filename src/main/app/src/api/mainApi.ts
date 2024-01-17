@@ -1,3 +1,4 @@
+import { User } from "./../views/app/unsplash/unsplashTypes";
 import axios from "axios";
 import { useSnackbarStore } from "@/stores/snackbarStore";
 import i18n from "@/plugins/i18n";
@@ -62,11 +63,25 @@ export const login = async (formData: any) => {
   }
 };
 
+export const register = async (formData: User) => {
+  const snackbarStore = useSnackbarStore();
+  const response = await instance.post("/auth/register", formData);
+  const { data } = response;
+  snackbarStore.showSuccessMessage("Criado com sucesso");
+  return data;
+};
+
 interface Profile {
   id: string;
   name: string;
   email: string;
   roles: string[];
+}
+
+interface User {
+  name: string;
+  email: string;
+  password: string;
 }
 
 interface Role {

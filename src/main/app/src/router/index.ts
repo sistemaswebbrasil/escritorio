@@ -53,6 +53,25 @@ export const routes = [
     },
   },
   {
+    path: "/users/form",
+    name: "UserForm",
+    component: () =>
+      import(
+        /* webpackChunkName: "chart-echart-line" */ "@/domain/user/UserForm.vue"
+      ),
+    meta: {
+      requiresAuth: true,
+      layout: "ui",
+      category: "Chart",
+      links: [
+        { title: "menu.home", to: { name: "home" }, disable: false },
+        { title: "menu.users", to: { name: "UserList" }, disable: false },
+        { title: "common.form", to: "/users/form", disable: true },
+      ],
+      title: "menu.users",
+    },
+  },
+  {
     path: "/roles",
     name: "RoleList",
     component: () =>
