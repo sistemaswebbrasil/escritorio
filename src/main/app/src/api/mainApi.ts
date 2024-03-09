@@ -39,7 +39,10 @@ instance.interceptors.response.use(
         });
 
         snackbarStore.showErrorMessage(message, messages);
-      } else snackbarStore.showErrorMessage(message || error.message, []);
+        return Promise.reject(error.response.data);
+      } else {snackbarStore.showErrorMessage(message || error.message, []);
+        return Promise.reject(error.response.data);
+      }
     } else {
       snackbarStore.showErrorMessage("Network Error", null);
     }
@@ -277,3 +280,5 @@ export const searchCollectionsApi = (query?: Query) => {
 export const searchUsersApi = (query?: Query) => {
   return instance.get("/search/users", { params: query });
 };
+
+export default instance;

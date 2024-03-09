@@ -91,6 +91,25 @@ export const routes = [
     },
   },
   {
+    path: "/persons",
+    name: "PersonList",
+    component: () =>
+      import(
+        /* webpackChunkName: "chart-echart-line" */ "@/domain/person/PersonList.vue"
+      ),
+    meta: {
+      requiresAuth: true,
+      layout: "ui",
+      category: "Chart",
+      links: [
+        { title: "menu.home", to: { name: "home" }, disable: false },
+        { title: "menu.persons", to: { name: "PersonList" }, disable: false },
+        { title: "common.list", to: "/person/form", disable: true },
+      ],
+      title: "menu.persons",
+    },
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "error",
     component: () =>

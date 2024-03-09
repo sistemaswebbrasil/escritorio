@@ -23,6 +23,12 @@ export default {
           icon: "mdi-home",
         },
         {
+          icon: "mdi-account",
+          text: "Persons",
+          link: "/persons",
+          key: "menu.persons",
+        },
+        {
           key: "menu.dashboard",
           text: "Dashboard",
           link: "/dashboard",
