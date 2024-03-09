@@ -7,3 +7,5 @@ services:
     - 'POSTGRES_USER=myuser'
     - 'POSTGRES_DB=mydatabase'
     - 'POSTGRES_PASSWORD=secret'
+    volumes:
+       - ./database:/var/lib/postgresql/data  
