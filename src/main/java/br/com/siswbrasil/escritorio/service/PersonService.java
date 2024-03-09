@@ -27,6 +27,7 @@ public class PersonService {
 			form.setId(null);
 			return repository.save(form);			
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new CustomException(HttpStatus.INTERNAL_SERVER_ERROR, "Falha ao criar nova Pessoa");
 		}
 

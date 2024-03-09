@@ -3,7 +3,10 @@ package br.com.siswbrasil.escritorio.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+
 import br.com.siswbrasil.escritorio.util.UserInfo;
+import io.jsonwebtoken.Claims;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
@@ -35,7 +38,7 @@ public abstract class Tracking implements Serializable {
 	@PrePersist
 	public void onPrePersist() {
 		this.dtInsert = new Date();
-		this.idUserInsert = UserInfo.getPerson();
+		this.idUserInsert = UserInfo.getPersonId();
 	}
 
 	@PreUpdate
@@ -44,7 +47,7 @@ public abstract class Tracking implements Serializable {
 			this.dtInsert = new Date();
 		}
 		this.dtUpdate = new Date();
-		this.idUserUpdate = UserInfo.getPerson();
+		this.idUserUpdate = UserInfo.getPersonId();
 	}
 
 }

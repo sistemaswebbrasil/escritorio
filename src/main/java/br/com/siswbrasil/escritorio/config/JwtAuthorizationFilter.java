@@ -50,7 +50,8 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 			}
 			log.info("token : " + accessToken);
 			Claims claims = jwtUtil.resolveClaims(request);
-			if (claims != null && jwtUtil.validateClaims(claims)) {
+			if (claims != null && jwtUtil.validateClaims(claims)) {	
+				
 				@SuppressWarnings("null")
 				String email = claims.getSubject();
 				@SuppressWarnings({ "unchecked" })
@@ -59,7 +60,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 				var roles = roleNames.stream().map(role -> new SimpleGrantedAuthority("ROLE_".concat(role)))
 						.collect(Collectors.toList());
 
-				Authentication authentication = new UsernamePasswordAuthenticationToken(email, "", roles);
+				Authentication authentication = new UsernamePasswordAuthenticationToken(email, claims, roles);
 				SecurityContextHolder.getContext().setAuthentication(authentication);
 			}
 		} catch (Exception e) {

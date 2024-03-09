@@ -53,10 +53,8 @@ public class AuthController {
 
 	@PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
 	@GetMapping("/profile")
-	public User profile(HttpServletRequest req) {
-		var clains = jwtUtil.resolveClaims(req);
-		String email = (String) clains.get("email");
-		return userService.getUserByEmail(email);
+	public Object profile(HttpServletRequest req) {
+		return jwtUtil.resolveClaims(req);		
 	}
 
 	@PostMapping("/register")
